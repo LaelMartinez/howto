@@ -1,0 +1,343 @@
+{
+	"info": {
+		"_postman_id": "453ac60e-79ec-47a9-b4e9-07b3c74ee01c",
+		"name": "Howto API",
+		"description": "API para gerenciar Howtos e seus endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17477582"
+	},
+	"item": [
+		{
+			"name": "Create Howto",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"apiName\": \"Categories API\", \"description\": \"API for managing categories.\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/howtos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"howtos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Howto",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/howtos/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"howtos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Endpoint",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"url\": \"/categories/1\", \"httpMethod\": \"GET\", \"inputExample\": \"N/A\", \"outputExample\": \"{ \\\"id\\\": 1, \\\"name\\\": \\\"Livros\\\" }\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/howtos/{{howtoid}}/endpoints",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"howtos",
+						"{{howtoid}}",
+						"endpoints"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update EndPoint",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"url\": \"/categories/2\",\r\n    \"httpMethod\": \"GET\",\r\n    \"inputExample\": \"N/A Nada a declarar\",\r\n    \"outputExample\": \"{ \\\"id\\\": 2, \\\"name\\\": \\\"Tecnologia\\\" }\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/howtos/{{howtoid}}/endpoints/{{endpointid}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"howtos",
+						"{{howtoid}}",
+						"endpoints",
+						"{{endpointid}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Howto",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"apiName\": \"New API Name\",\r\n    \"description\": \"Updated description for the Howto\"\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/howtos/{{howtoid}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"howtos",
+						"{{howtoid}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Implementação",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"language\": \"Python\",\r\n    \"exampleCode\": \"import requests\\nresponse = requests.get('https://api.example.com/endpoint')\",\r\n    \"description\": \"Exemplo de como fazer uma requisição GET em Python usando requests\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/howtos/{{howtoid}}/implementation-examples/{{implementacaoid}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"howtos",
+						"{{howtoid}}",
+						"implementation-examples",
+						"{{implementacaoid}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Implementação",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"language\": \"Java\",\r\n    \"exampleCode\": \"HttpClient client = HttpClient.newHttpClient(); ...\",\r\n    \"description\": \"Exemplo de como fazer uma requisição GET em Java usando HttpClient\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/howtos/{{howtoid}}/implementation-examples",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"howtos",
+						"{{howtoid}}",
+						"implementation-examples"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Endpoints",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/howtos/{{howtoid}} /endpoints",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"howtos",
+						"{{howtoid}} ",
+						"endpoints"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Implements",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/howtos/{{howtoid}}/implementation-examples",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"howtos",
+						"{{howtoid}}",
+						"implementation-examples"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete implementação",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/howtos/{{howtoid}}/implementation-examples/{{implementacaoid}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"howtos",
+						"{{howtoid}}",
+						"implementation-examples",
+						"{{implementacaoid}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete EndPoint",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080//implementation-examples/{id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"",
+						"implementation-examples",
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Howto",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/howtos/{{howtoid}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"howtos",
+						"{{howtoid}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "howtoid",
+			"value": "howtoId"
+		}
+	]
+}

@@ -1,0 +1,107 @@
+{
+    "info": {
+        "name": "Howto API",
+        "_postman_id": "1234-5678-91011",
+        "description": "API para gerenciar Howtos e seus endpoints",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Create Howto",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"apiName\": \"Categories API\", \"description\": \"API for managing categories.\"}"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/howtos",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "howtos"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Get Howto",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8080/howtos/1",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "howtos",
+                        "1"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Create Endpoint",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"url\": \"/categories/1\", \"httpMethod\": \"GET\", \"inputExample\": \"N/A\", \"outputExample\": \"{ \\\"id\\\": 1, \\\"name\\\": \\\"Livros\\\" }\"}"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/howtos/1/endpoints",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "howtos",
+                        "1",
+                        "endpoints"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Get All Endpoints",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8080/howtos/1/endpoints",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "howtos",
+                        "1",
+                        "endpoints"
+                    ]
+                }
+            },
+            "response": []
+        }
+    ]
+}
