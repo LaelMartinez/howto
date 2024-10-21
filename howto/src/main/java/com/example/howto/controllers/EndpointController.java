@@ -5,6 +5,10 @@ import com.example.howto.model.Endpoint;
 import com.example.howto.model.Howto;
 import com.example.howto.repositories.EndpointRepository;
 import com.example.howto.repositories.HowtoRepository;
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+@Api(value = "Controller de EndPoints", tags = "Endpoint")
 @RestController
 @RequestMapping("/howtos/{howtoId}/endpoints")
 public class EndpointController {
@@ -22,6 +27,7 @@ public class EndpointController {
     @Autowired
     private EndpointRepository endpointRepository;
 
+    @ApiOperation(value = "Cadastra um Endpoint", notes = "Cadastra um Endpoint")
     @PostMapping
     public Endpoint createEndpoint(@PathVariable Long howtoId, @RequestBody Endpoint endpoint) {
         Howto howto = howtoRepository.findById(howtoId)
@@ -31,11 +37,13 @@ public class EndpointController {
         return endpointRepository.save(endpoint);
     }
 
+    @ApiOperation(value = "Lista Endpoints Cadastrados", notes = "Lista Endpoints Cadastrados")
     @GetMapping
     public List<Endpoint> getAllEndpoints(@PathVariable Long howtoId) {
         return endpointRepository.findByHowtoId(howtoId);
     }
 
+    @ApiOperation(value = "Altera um Endpoints", notes = "Altera um Endpoints")
     @PutMapping("/{endpointId}")
     public ResponseEntity<Endpoint> updateEndpoint(@PathVariable Long howtoId, @PathVariable Long endpointId, @RequestBody Endpoint newEndpoint) {
         Howto howto = howtoRepository.findById(howtoId)
@@ -56,6 +64,7 @@ public class EndpointController {
         }
     }
 
+    @ApiOperation(value = "Deleta um Endpoints", notes = "Deleta um Endpoint")
     @DeleteMapping("/{endpointId}")
     public ResponseEntity<Void> deleteEndpoint(@PathVariable Long howtoId, @PathVariable Long endpointId) {
         Howto howto = howtoRepository.findById(howtoId)

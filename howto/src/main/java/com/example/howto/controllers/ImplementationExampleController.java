@@ -19,6 +19,10 @@ import com.example.howto.model.ImplementationExample;
 import com.example.howto.repositories.HowtoRepository;
 import com.example.howto.repositories.ImplementationExampleRepository;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
+@Api(value = "Controller de Implementações", tags = "Implement")
 @RestController
 @RequestMapping("/howtos/{howtoId}/implementation-examples")
 public class ImplementationExampleController {
@@ -34,6 +38,7 @@ public class ImplementationExampleController {
         return implementationExampleRepository.findByHowtoId(howtoId);
     }
 
+    @ApiOperation(value = "Cadastra uma Implementação", notes = "Cadastra uma Implementação")
     @PostMapping
     public ResponseEntity<ImplementationExample> createImplementationExample(@PathVariable Long howtoId, @RequestBody ImplementationExample implementationExample) {
         Howto howto = howtoRepository.findById(howtoId)
@@ -44,6 +49,7 @@ public class ImplementationExampleController {
         return ResponseEntity.ok(savedExample);
     }
 
+    @ApiOperation(value = "Altera uma Implementação", notes = "Altera uma Implementação")
     @PutMapping("/{id}")
     public ResponseEntity<ImplementationExample> updateImplementationExample(@PathVariable Long howtoId, @PathVariable Long id, @RequestBody ImplementationExample updatedImplementationExample) {
         Howto howto = howtoRepository.findById(howtoId)
@@ -64,6 +70,7 @@ public class ImplementationExampleController {
         return ResponseEntity.ok(savedExample);
     }
 
+    @ApiOperation(value = "Deleta uma Implementação", notes = "Deleta uma Implementação")
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteImplementationExample(@PathVariable Long howtoId, @PathVariable Long id) {
         Howto howto = howtoRepository.findById(howtoId)
