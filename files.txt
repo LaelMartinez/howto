@@ -1,0 +1,22 @@
+Howto API.postman_collection.json
+frontend/my-howto-app
+howto-api-postman-collection.json
+howto/.gitattributes
+howto/.gitignore
+howto/.mvn/wrapper/maven-wrapper.properties
+howto/mvnw
+howto/mvnw.cmd
+howto/pom.xml
+howto/src/main/java/com/example/howto/HowtoApplication.java
+howto/src/main/java/com/example/howto/controllers/EndpointController.java
+howto/src/main/java/com/example/howto/controllers/HowtoController.java
+howto/src/main/java/com/example/howto/controllers/ImplementationExampleController.java
+howto/src/main/java/com/example/howto/exceptions/ResourceNotFoundException.java
+howto/src/main/java/com/example/howto/model/Endpoint.java
+howto/src/main/java/com/example/howto/model/Howto.java
+howto/src/main/java/com/example/howto/model/ImplementationExample.java
+howto/src/main/java/com/example/howto/repositories/EndpointRepository.java
+howto/src/main/java/com/example/howto/repositories/HowtoRepository.java
+howto/src/main/java/com/example/howto/repositories/ImplementationExampleRepository.java
+howto/src/main/resources/application.properties
+howto/src/test/java/com/example/howto/HowtoApplicationTests.java
