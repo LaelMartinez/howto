@@ -29,8 +29,8 @@ public class Endpoint {
     private String outputExample;
 
     @ManyToOne
-    @JoinColumn(name = "howto_id")
+    @JoinColumn(name = "api_id")
     @JsonBackReference    
-    private Howto howto;
+    private Api api;
 
 }

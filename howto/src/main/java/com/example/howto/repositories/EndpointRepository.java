@@ -8,5 +8,5 @@ import com.example.howto.model.Endpoint;
 
 public interface EndpointRepository extends JpaRepository<Endpoint, Long> {
 
-	List<Endpoint> findByHowtoId(Long howtoId);
+	List<Endpoint> findByApiId(Long api_id);
 }

@@ -29,7 +29,7 @@ public class ImplementationExample {
     
 
     @ManyToOne
-    @JoinColumn(name = "howto_id")
+    @JoinColumn(name = "api_id")
     @JsonBackReference
-    private Howto howto; 
+    private Api api;
 }

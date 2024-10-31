@@ -9,5 +9,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ImplementationExampleRepository extends JpaRepository<ImplementationExample, Long> {
 
-	List<ImplementationExample> findByHowtoId(Long howtoId);
+	List<ImplementationExample> findByApiId(Long api);
 }
